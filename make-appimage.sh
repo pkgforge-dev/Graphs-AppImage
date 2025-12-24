@@ -25,8 +25,8 @@ quick-sharun /usr/bin/graphs \
 # Patch Graphs to use AppImage's directory
 sed -i '/if __name__ == "__main__":/a \
     SHARUN_DIR = os.getenv('"'"'SHARUN_DIR'"'"')' ./AppDir/bin/graphs
-sed -i 's|graph_path_dir = "/usr/share/graphs"|graph_path_dir = os.path.join(SHARUN_DIR, "/share/graphs")|' ./AppDir/bin/graphs
-sed -i 's|localedir = "/usr/share/locale"|localedir = os.path.join(SHARUN_DIR, "/share/locale")|' ./AppDir/bin/graphs
+sed -i 's|graph_path_dir = "/usr/share/graphs"|graph_path_dir = os.path.join(SHARUN_DIR, "share", "graphs")|' ./AppDir/bin/graphs
+sed -i 's|localedir = "/usr/share/locale"|localedir = os.path.join(SHARUN_DIR, "share", "locale")|' ./AppDir/bin/graphs
 sed -i 's|gresource_location = os.path.join("/usr/share/graphs", "se.sjoerd.Graphs.gresource")|gresource_location = os.path.join(graph_path_dir, "se.sjoerd.Graphs.gresource")|' ./AppDir/bin/graphs
 
 # Turn AppDir into AppImage
