@@ -23,7 +23,7 @@ quick-sharun /usr/bin/graphs \
              /usr/lib/libgirepository*
 
 # Set Graphs to use AppImage's directory
-echo 'GRAPHS_DEVEL_PATH=${SHARUN_DIR}/share/graphs'
+echo 'GRAPHS_DEVEL_PATH=${SHARUN_DIR}/share/graphs' >> ./AppDir/.env
 echo 'GRAPHS_OVERRIDE_RESOURCES=${SHARUN_DIR}/share/graphs/se.sjoerd.Graphs.gresource' >> ./AppDir/.env
 echo 'GRAPHS_OVERRIDE_LOCALEDIR=${SHARUN_DIR}/share/locale' >> ./AppDir/.env
 
