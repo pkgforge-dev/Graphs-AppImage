@@ -22,7 +22,8 @@ export OPTIMIZE_LAUNCH=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/graphs \
-             /usr/lib/libgirepository*
+             /usr/lib/libgirepository* \
+             /usr/share/help/*/graphs
 
 # Set Graphs to use AppImage's directory
 echo 'GRAPHS_DEVEL_PATH=${SHARUN_DIR}/share/graphs' >> ./AppDir/.env
