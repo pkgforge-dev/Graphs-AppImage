@@ -15,7 +15,6 @@ export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
 export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
-export DEBLOAT_LOCALE=0
 export STARTUPWMCLASS=se.sjoerd.Graphs # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
 
@@ -24,7 +23,7 @@ quick-sharun /usr/bin/graphs \
              /usr/lib/libgirepository*
 
 # Patch Graphs to use AppImage's directory
-sed -i '/    import gi/a\
+sed -i '/    gi.require_version("Graphs", "1")/a\
     SHARUN_DIR = os.getenv('"'"'SHARUN_DIR'"'"')' ./AppDir/bin/graphs
 sed -i 's|graph_path_dir = "/usr/share/graphs"|graph_path_dir = os.path.join(SHARUN_DIR, '"'"'share'"'"', '"'"'graphs'"'"')|' ./AppDir/bin/graphs
 sed -i 's|localedir = "/usr/share/locale"|localedir = os.path.join(SHARUN_DIR, '"'"'share'"'"', '"'"'locale'"'"')|' ./AppDir/bin/graphs
