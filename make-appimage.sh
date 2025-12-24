@@ -22,12 +22,10 @@ export GTK_CLASS_FIX=1
 quick-sharun /usr/bin/graphs \
              /usr/lib/libgirepository*
 
-# Patch Graphs to use AppImage's directory
-sed -i '/    gi.require_version("Graphs", "1")/a\
-    SHARUN_DIR = os.getenv('"'"'SHARUN_DIR'"'"')' ./AppDir/bin/graphs
-sed -i 's|graph_path_dir = "/usr/share/graphs"|graph_path_dir = os.path.join(SHARUN_DIR, '"'"'share'"'"', '"'"'graphs'"'"')|' ./AppDir/bin/graphs
-sed -i 's|localedir = "/usr/share/locale"|localedir = os.path.join(SHARUN_DIR, '"'"'share'"'"', '"'"'locale'"'"')|' ./AppDir/bin/graphs
-sed -i 's|gresource_location = os.path.join("/usr/share/graphs", "se.sjoerd.Graphs.gresource")|gresource_location = os.path.join(graph_path_dir, '"'"'se.sjoerd.Graphs.gresource'"'"')|' ./AppDir/bin/graphs
+# Set Graphs to use AppImage's directory
+echo 'GRAPHS_DEVEL_PATH=${SHARUN_DIR}/share/graphs'
+echo 'GRAPHS_OVERRIDE_RESOURCES=${SHARUN_DIR}/share/graphs/se.sjoerd.Graphs.gresource' >> ./AppDir/.env
+echo 'GRAPHS_OVERRIDE_LOCALEDIR=${SHARUN_DIR}/share/locale' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
