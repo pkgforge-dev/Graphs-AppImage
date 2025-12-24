@@ -17,6 +17,7 @@ export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=se.sjoerd.Graphs # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
+export OPTIMIZE_LAUNCH=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/graphs \
