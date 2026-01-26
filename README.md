@@ -1,3 +1,5 @@
+<div align="center">
+
 # Graphs AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Graphs-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Graphs-AppImage/releases/latest)
@@ -8,7 +10,11 @@
   <img src="https://gitlab.gnome.org/World/Graphs/-/raw/main/data/icons/hicolor/scalable/apps/se.sjoerd.Graphs.svg?ref_type=heads"" width="128" />
 </p>
 
-* [Upstream URL](https://gitlab.gnome.org/World/Graphs)
+| Latest Stable Release | Upstream URL |
+| :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Graphs-AppImage/releases/latest) | [Click here](https://gitlab.gnome.org/World/Graphs) |
+
+</div>
 
 ---
 
