@@ -31,3 +31,6 @@ echo 'GRAPHS_OVERRIDE_LOCALEDIR=${SHARUN_DIR}/share/locale' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
+
+# Test the final app
+quick-sharun --test ./dist/*.AppImage
